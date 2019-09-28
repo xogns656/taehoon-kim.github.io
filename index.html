@@ -1,1 +1,60 @@
-Hello World
+<html>
+  <head>
+    <title>김태훈 포트폴리오</title>
+  </head>
+  <body>
+   <div id = "title">태태 ♥ 다다</div>
+   <div id = "timer"></div>
+    <button id="btn">뾱</button>
+    <img src="./220px-Corazón.svg.png" id="heart" ></img>
+    <script>
+     let elBtn = document.getElementById('btn');
+     let elHeart = document.getElementById("heart")
+     let elTimer = document.getElementById("timer")
+
+     elBtn.onclick=()=>{
+      let select = "hidden"
+      if(elHeart.style.visibility === "hidden"){
+       select = "visible"
+      }
+      else {
+       select = "hidden"
+      }
+       elHeart.style.visibility =  select         
+     }
+
+     setInterval(()=>{
+      let date = new Date().getTime() - new Date(2014,8,24).getTime()
+      date = Math.floor(date / (1000*60*60*24))
+      elTimer.innerText = ""
+      elTimer.innerText += "사랑한지 +"+date+" 일"
+
+     },1000)
+    </script>
+    <style>
+    #timer {
+     position: absolute;
+     font-size: 40px;
+     top:22.5%;
+     left : 37.5%;
+    }
+    #title {
+     position: absolute;
+     font-size: 50px;
+     top :15%;
+     left: 39.1%;
+     }
+    #btn {
+     position: absolute;
+     left:45%;
+     top: 30%
+    } 
+    #heart{
+     position: absolute;
+     left: 40%;
+     top: 40%;
+     visibility: hidden;
+    }
+    </style>
+  </body>
+</html>
